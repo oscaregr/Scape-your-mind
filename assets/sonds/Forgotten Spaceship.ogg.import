@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Forgotten Spaceship.ogg-e0a931b3a3d11a8708f95983d6601883.oggstr"
+
+[deps]
+
+source_file="res://assets/sonds/Forgotten Spaceship.ogg"
+dest_files=[ "res://.import/Forgotten Spaceship.ogg-e0a931b3a3d11a8708f95983d6601883.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,203 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://lampara.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemigos.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Fondos/cuarto_luz.png" type="Texture" id=4]
+[ext_resource path="res://colis_ciones.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Config_strated.gd" type="Script" id=7]
+[ext_resource path="res://Audios.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/texto/Frijole-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Puerta.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 9 )
+
+[node name="Cuarto" type="Node"]
+script = ExtResource( 7 )
+canvas = 1
+maxLife = 130
+Life = 100
+tiempo = 40
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1152.0
+margin_bottom = 320.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="colis_ciones" parent="." instance=ExtResource( 5 )]
+
+[node name="Instrucciones" type="Control" parent="."]
+anchor_left = 0.23
+anchor_top = 0.105
+anchor_right = 0.428
+anchor_bottom = 0.236
+margin_left = -2.25246
+margin_top = 0.0762062
+margin_right = -2.56448
+margin_bottom = 0.156204
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A" type="Label" parent="Instrucciones"]
+anchor_left = -1.003
+anchor_top = 3.577
+anchor_right = -0.717
+anchor_bottom = 4.672
+margin_left = 0.0625916
+margin_top = 0.00915527
+margin_right = -20.9794
+margin_bottom = -22.9809
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 1 )
+text = "A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="Label" parent="Instrucciones"]
+anchor_left = -0.696
+anchor_top = 1.813
+anchor_right = -0.207
+anchor_bottom = 2.956
+margin_left = -0.0664139
+margin_top = -0.0107498
+margin_right = -35.9494
+margin_bottom = -24.0167
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 2 )
+text = "W"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="D" type="Label" parent="Instrucciones"]
+anchor_left = -0.293
+anchor_top = 3.461
+anchor_right = 0.265
+anchor_bottom = 5.175
+margin_left = -0.0369072
+margin_top = -0.01091
+margin_right = -41.0629
+margin_bottom = -35.9989
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 3 )
+text = "D"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="O" type="Label" parent="Instrucciones"]
+anchor_left = 1.088
+anchor_top = 1.643
+anchor_right = 1.401
+anchor_bottom = 2.738
+margin_left = 0.0639954
+margin_top = -0.00600433
+margin_right = -22.947
+margin_bottom = -22.996
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 4 )
+text = "O"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Direccion" type="Label" parent="Instrucciones"]
+anchor_left = 2.785
+anchor_top = 2.332
+anchor_right = 3.254
+anchor_bottom = 3.975
+margin_left = -0.0147095
+margin_top = 0.00267792
+margin_right = -45.9577
+margin_bottom = -46.0033
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 5 )
+text = "=>"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pause" type="Label" parent="Instrucciones"]
+visible = false
+anchor_left = 0.589
+anchor_top = 5.853
+anchor_right = 2.031
+anchor_bottom = 6.686
+margin_left = 0.0126495
+margin_top = -0.0152435
+margin_right = 0.0386963
+margin_bottom = -0.00125122
+custom_fonts/font = SubResource( 6 )
+text = "Space = II"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 107.918, 204.319 )
+speed = 90
+
+[node name="Enemigos" parent="." instance=ExtResource( 3 )]
+position = Vector2( 542.018, 206.668 )
+speed = 150
+
+[node name="lamparas" type="Node" parent="." groups=[
+"Lampara",
+]]
+
+[node name="lampara" parent="lamparas" instance=ExtResource( 1 )]
+position = Vector2( 349.708, 64.3395 )
+
+[node name="CanvasModulate1" type="CanvasModulate" parent="." groups=[
+"CanvasM",
+]]
+visible = false
+position = Vector2( 56.5686, 2.82842 )
+color = Color( 0.376471, 0.25098, 0.25098, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+
+[node name="Audios" parent="." instance=ExtResource( 8 )]
+
+[node name="Puerta" parent="." instance=ExtResource( 10 )]

@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/bar life/proses.png" type="Texture" id=1]
+[ext_resource path="res://assets/bar life/under.png" type="Texture" id=2]
+[ext_resource path="res://assets/bar life/over.png" type="Texture" id=3]
+[ext_resource path="res://GUI.gd" type="Script" id=4]
+[ext_resource path="res://assets/Ambintacion/brain.png" type="Texture" id=5]
+[ext_resource path="res://assets/texto/Frijole-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/attacks/Fireball.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="LifeBar" type="TextureProgress" parent="." groups=[
+"LifeBar",
+]]
+anchor_left = 0.0322581
+anchor_top = 0.06875
+anchor_right = 0.301075
+anchor_bottom = 0.1375
+margin_right = -1.52588e-05
+value = 59.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 1, 1, 1, 0.0627451 )
+tint_over = Color( 1, 1, 1, 0.196078 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="Light2D" type="Light2D" parent="LifeBar"]
+position = Vector2( 100, 11 )
+scale = Vector2( 1, 1.1 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Points" type="Label" parent="." groups=[
+"Points",
+]]
+anchor_left = 0.605
+anchor_top = 0.037
+anchor_right = 0.976
+anchor_bottom = 0.112
+margin_left = -0.120026
+margin_top = 0.16
+margin_right = -92.144
+margin_bottom = -7.84
+rect_scale = Vector2( 1.5, 1.5 )
+size_flags_stretch_ratio = 1.01
+text = "0 Points"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Cronometro" type="Label" parent="." groups=[
+"Cronometro",
+]]
+anchor_left = 0.414
+anchor_top = 0.063
+anchor_right = 0.589
+anchor_bottom = 0.302
+margin_left = -1.87936
+margin_top = 0.0214863
+margin_right = -44.0794
+margin_bottom = -25.4585
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.007
+anchor_top = 0.045
+anchor_right = 0.053
+anchor_bottom = 0.161
+margin_left = 0.0351639
+margin_top = -0.0215826
+margin_right = -0.188839
+margin_bottom = -0.141586
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Pills" type="Label" parent="."]
+margin_left = 28.8645
+margin_top = 287.0
+margin_right = 86.8645
+margin_bottom = 304.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "0 Pills"
+align = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 24.3182
+margin_top = 298.909
+margin_right = 38.3182
+margin_bottom = 309.909
+rect_rotation = -60.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

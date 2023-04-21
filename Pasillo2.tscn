@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Pasillo.tscn" type="PackedScene" id=1]
+
+[node name="Pasillo2" type="Node"]
+
+[node name="Pasillo" parent="." instance=ExtResource( 1 )]
+Next_esena = 1

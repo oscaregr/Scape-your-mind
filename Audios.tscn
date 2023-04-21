@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/sonds/Forgotten Spaceship.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/sonds/Looking for a new beginning.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/sonds/grito.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sonds/Fear.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/sonds/8.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sonds/5.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sonds/6.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sonds/Dreaming.ogg" type="AudioStream" id=8]
+
+[node name="Audios" type="Node" groups=[
+"Sonidos",
+]]
+
+[node name="1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -20.444
+
+[node name="2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.722
+
+[node name="3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.721
+
+[node name="4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.722
+
+[node name="5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
